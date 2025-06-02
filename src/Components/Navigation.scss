@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+a,
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 30%;
+  object-fit: cover;
+}
+.logo svg {
+  width: 50px;
+  height: 50px;
+  border-radius: 30%;
+  object-fit: cover;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.menu-links {
+  display: flex;
+  gap: 24px;
+  border-left: 1px solid #999999;
+  padding-inline: 55px;
+}
+
+.menu-links a {
+  font-weight: 500;
+  color: #ffffff;
+  padding: 8px 16px;
+}
+.menu-links a:hover {
+  color: white;
+}
+
+.menu-btn {
+  font-size: 32px;
+  color: white;
+  display: none;
+  cursor: pointer;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(169, 169, 169);
+}
+
+section > h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  text-align: center;
+  text-wrap: balance;
+}
+
+@media (max-width: 53rem) {
+  .menu {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}

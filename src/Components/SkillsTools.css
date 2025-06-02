@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+.tooltip {
+  position: absolute;
+  top: -48px;
+  background: var(--raw-seinna, #bfbfcc);
+  min-width: max-content;
+  color: var(--white, #ffffff);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px var(--card-shadow, rgba(0, 0, 0, 0.1));
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-1, 0.25s ease-in-out);
+  z-index: 1;
+}
+
+/* .skills {
+} */
+
+.skills-content {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.skills-content h1 {
+  font-size: calc(1.813rem + 1vw);
+  font-family: var(--base-font, "Roboto Mono", monospace);
+  color: var(--text-color, #333333);
+  margin-bottom: 30px;
+}
+
+.skills-toggle {
+  background: var(--base-color, #ffffff);
+  position: relative;
+  width: max-content;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.skills-toggle::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  width: 93px;
+  background: var(--raw-seinna, #bfbfcc);
+  border-radius: 50px;
+  transition: var(--transition-1, 0.25s ease-in-out);
+  z-index: -1;
+}
+
+.skills-toggle.active::before {
+  left: 111px;
+  width: 93px;
+}
+
+.toggle-btn {
+  color: var(--text-color, #333333);
+  font-family: var(--base-font, "Roboto Mono", monospace);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 25px;
+  transition: var(--transition-1, 0.25s ease-in-out);
+}
+
+.toggle-btn.active {
+  color: var(--white, #ffffff);
+}
+
+.skills-box.active .skills-list,
+.skills-box .tools-list {
+  display: none;
+}
+
+.skills-box .skills-list,
+.skills-box.active .tools-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 15px;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+.skills-box {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.skills-card {
+  position: relative;
+  background: var(--base-color, #ffffff);
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: help;
+}
+
+.skills-card:hover .tooltip {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.skills-card img {
+  width: 50px;
+  height: 50px;
+}
+
+@media (min-width: 992px) {
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .skills-content {
+    margin-bottom: 0;
+  }
+
+  .skills-toggle {
+    margin-inline: 0;
+  }
+
+  .skills-content h1 {
+    font-size: calc(1.313rem + 1vw);
+  }
+}
+
+.darkmode .skills-toggle {
+  background: var(--base-variant, #101425);
+}
+
+.darkmode .skills-card {
+  background: var(--base-variant, #101425);
+}
+
+.darkmode .toggle-btn {
+  color: var(--text-color, #ffffff);
+}
+
+.darkmode .skills-content h1 {
+  color: var(--text-color, #ffffff);
+}
